@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		p{color:red;width: 100px;}
+		div{width: 100px;}
+		span{background-color: #ccc;}
+	</style>
+	<style>
+
+	</style>
+</head>
+<body>
+	<p class="ys bk">23432</p>
+	<script>
+
+		alert(document.styleSheets.length)	//几个style
+		var s1=document.styleSheets[0];		// 第一个style
+		var rules=s1.cssRules?s1.cssRules:s1.rules;		
+		alert(rules[2].selectorText)		// span
+		alert(rules[2].style.cssText)		// background-color: #ccc;
+
+		s1.insertRule(".ys{background:red;}",rules.length)
+		//s1.addRule(".ys","{background:red;}",rules.length) //IE
+		alert("")
+		s1.removeRule(rules.length-1);		// 删除最后一个样式
+		//s1.deleteRule(rules.length-1);	//IE
+
+		//document.createStyleSheet()
+		var objHead=document.getElementsByTagName("head")[0];
+		var objStyle=document.createElement("style");
+		objStyle.innerHTML=".bk{border:1px solid blue}";
+		objHead.appendChild(objStyle);
+
+	</script>
+</body>
+</html>

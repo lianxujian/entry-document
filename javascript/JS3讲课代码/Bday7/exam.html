@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#info
+		{
+			width:120px;
+			height: 25px;
+			overflow: hidden;
+			border:1px solid red;
+		}
+		#info ul
+		{
+			padding:0;margin:0;list-style: none;
+		}
+		#info ul li
+		{
+			height:25px;
+			background: #ccc;
+		}
+
+	</style>
+</head>
+<body>
+ <div id="info">
+	<ul>
+		<li>aaaaa</li>
+		<li>bbbbb</li>
+		<li>ccccc</li>
+		<li>dddddd</li>
+	</ul>
+ </div>
+ <script>
+        function Scroll(cid){
+        	this.timer=null;
+        	this.objInfo=document.getElementById(cid);
+ 		    this.objUl=this.objInfo.getElementsByTagName("ul")[0];
+ 		    this.lis=this.objUl.getElementsByTagName("li");
+
+            this.init();
+            this.auto();
+            this.mouse();
+        }
+ 		Scroll.prototype.init=function(){
+ 			var _this=this;
+ 	 		this.timer=setInterval(function(){
+ 	 			_this.auto();
+ 	 		},3000+this.objInfo.offsetHeight*30);
+ 	   }
+
+        Scroll.prototype.auto=function(){
+        var _this=this;
+ 		var v=0;
+ 		var timer=setInterval(function(){
+ 			if(v>-_this.objInfo.offsetHeight)
+ 			_this.objUl.style.marginTop=(v--)+"px";
+ 		    else{
+ 		    	clearInterval(timer);
+ 		    	_this.objUl.style.marginTop="0";
+ 		    	_this.objUl.appendChild(_this.lis[0]);
+ 		    	
+ 		    }
+
+ 		},30);
+ 	  }
+ 	  Scroll.prototype.mouse=function(){
+ 	  	  var _this=this;
+ 	  	  this.objInfo.onmouseover=function(){
+ 	  	  	clearInterval(_this.timer);
+ 	  	  }
+ 	  	  this.objInfo.onmouseout=function(){
+ 	  	  	_this.init();
+ 	  	  }
+
+
+ 	  }
+
+ 	 new Scroll("info");
+
+ </script>
+</body>
+</html>

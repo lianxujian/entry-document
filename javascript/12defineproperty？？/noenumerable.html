@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var obj={
+			name:"zs",
+			age:18
+		}
+		Object.defineProperty(obj,"name",{
+			enumerable:false
+		});
+		Object.defineProperty(obj,"school",{ //defineProperty 对象没有的属性默认值是false
+			value:"bw"	//这个值在定义的时候即使不可写也可以更改，但不能重新定义
+		})
+		/*Object.defineProperty(obj,{
+			name:{
+				enumerable:false
+			},
+			school:{
+				value:"bw"
+			}
+		})*/
+		obj.name="ls";
+		obj.school="qh";
+		for(var t in obj){
+			console.log(t+":"+obj[t])
+		}
+		alert(Object.getOwnPropertyDescriptor(obj,"school").configurable)
+		alert(obj.name)
+		alert(obj.school)
+	</script>
+</body>
+</html>

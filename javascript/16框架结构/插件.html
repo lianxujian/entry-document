@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+	<script src="move.js"></script>
+
+	<style>
+		p{
+			width: 200px;
+			height: 30px;
+			background-color: red;
+		}
+		div{
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div>&nbsp;&nbsp;</div>
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+	<p>4</p>
+	<p>5</p>
+	<p>6</p>
+	<p>7</p>
+	<p>8</p>
+	<p>9</p>
+	<p>10</p>
+	<script>
+       $("p").hover(function(){
+       	 // var _this=this;
+       	  $(this).animate({width:800}).css("background-color","yellow");
+       },
+       function(){
+        $(this).animate({width:200}).css("background-color","red");
+       })
+       $("p").attr("flag",false);
+       $("p").click(function(){
+       	  $(this).eles[0].flag=!$(this).eles[0].flag;
+	       	 if($(this).eles[0].flag)
+	       	 {
+	       	  	$("div").append($(this));
+	       	  
+	       	  }
+	       	  else
+	       	  {
+	       	  	$("body").append($(this));
+	       	  
+	       	  }
+       })
+
+	</script>
+</body>
+</html>

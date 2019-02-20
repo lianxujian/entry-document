@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<div></div>
+	<script>
+		try{
+			var xmlhttp=new XMLHttpRequest();
+		}catch(e){
+			var xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		
+		var txt=document.getElementById("txt");
+		var divs=document.getElementsByTagName("div");
+		txt.onblur=function(){
+			xmlhttp.open("post","aaaaa.asp",true);//true 异步 false同步
+			//new Date().getTime或随机数解决了浏览器的缓存问题(Get)
+			//post不存在浏览器的缓存问题
+			xmlhttp.setRequestHeader("content-type","application/x-www-form-urlencoded")
+			xmlhttp.send("mz="+txt.value);
+			xmlhttp.onreadystatechange=function(){
+				//alert(xmlhttp.readyState);
+				//0 未初始化 1 open sending 2 发送完成 3 解析数据 4 完成
+				if(this.readyState==4&this.status==200){//status 服务器端http状态码
+					var r=this.responseText; //局部刷新
+					if(r=="1"){
+						divs[0].innerHTML="该用户存在";
+					}else{
+						divs[0].innerHTML="ok";
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

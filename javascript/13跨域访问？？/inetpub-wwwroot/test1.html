@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">按钮</button>
+	<button id="btn2">按钮2</button>
+
+	<script>
+	var kc;
+		function f(r){
+			var str=kc+":";
+			for(var t in r){
+				str+=" "+r[t];
+			}
+			alert(str);
+		}
+		function fun(r){
+			var str="默认处理"+kc+":";
+			for(var t in r){
+				str+=" "+r[t];
+			}
+			alert(str);
+		}
+		var btn=document.getElementById("btn");
+		var btn2=document.getElementById("btn2");
+		btn.onclick=function(){
+			kc=prompt("输入课程");
+			var scr=document.createElement("script");
+			scr.src="http://localhost:8000/h1.php?kc="+kc+"&cb=f";
+			document.body.appendChild(scr);
+			document.body.removeChild(scr);
+		}
+		btn2.onclick=function(){
+			kc=prompt("输入课程");
+			var scr=document.createElement("script");
+			scr.src="http://localhost:8000/h1.php?kc="+kc;
+			document.body.appendChild(scr);
+			document.body.removeChild(scr);
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	#editor{width: 400px;height: 200px;border:1px solid red;}
+	#faces{display: none;position:relative;left:220px;}
+</style>
+<body>
+	<button value="red">红</button>
+	<button value="green">绿</button>
+	<button value="blue">蓝</button>
+	<img src="CustomFace/85.gif" id="bold">
+	<img src="CustomFace/87.gif" id="italic">
+	<img src="CustomFace/89.gif" id="underline">
+	<img src="CustomFace/91.gif" id="left">
+	<img src="CustomFace/92.gif" id="center">
+	<img src="CustomFace/93.gif" id="right">
+	<select id="fontsize">
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<button>face</button>
+	<button id="view">view</button>
+	<div id="faces"><img src="CustomFace/1.gif"><img src="CustomFace/2.gif"><img src="CustomFace/3.gif"></div>
+	
+	<div id="editor" contenteditable="true">abc</div>
+	<textarea id="code" cols="50" rows="10"></textarea>
+	<script>
+		var btns=document.getElementsByTagName('button');
+		var objfaces=document.getElementById('faces');
+		var imgs=objfaces.getElementsByTagName('img');
+		var editor=document.getElementById('editor');
+		var bold=document.getElementById('bold');
+		var left=document.getElementById('left');
+		var center=document.getElementById('center');
+		var right=document.getElementById('right');
+		var fontsize=document.getElementById('fontsize');
+		var view=document.getElementById('view');
+		var code=document.getElementById('code');
+		for(var i=0;i<btns.length;i++){
+			btns[i].onclick=function(){
+				//IE document.selection.createRange().text
+				if(getSelection().toString().length==0){
+					alert('no select!!')
+				}
+				document.execCommand('ForeColor',false,this.value)
+			}
+		}
+		btns[3].onclick=function(){
+			objfaces.style.display='block';
+		}
+		for(var i=0;i<imgs.length;i++){
+			imgs[i].onclick=function(){
+				editor.focus();
+				document.execCommand('insertImage',false,this.src)
+				objfaces.style.display='none';
+			}
+		}
+		bold.onclick=function(){
+			if(getSelection().toString().length==0){
+				alert('no select!!')
+			}
+			if(document.queryCommandState('bold')){
+				this.src='CustomFace/85.gif'
+			}else{
+				this.src='CustomFace/86.gif'
+			}
+			document.execCommand('bold');
+		}
+		italic.onclick=function(){
+			if(getSelection().toString().length==0){
+				alert('no select!!')
+			}
+			if(document.queryCommandState('italic')){
+				this.src='CustomFace/87.gif'
+			}else{
+				this.src='CustomFace/88.gif'
+			}
+			document.execCommand('italic');
+		}
+		underline.onclick=function(){
+			if(getSelection().toString().length==0){
+				alert('no select!!')
+			}
+			if(document.queryCommandState('underline')){
+				this.src='CustomFace/89.gif'
+			}else{
+				this.src='CustomFace/90.gif'
+			}
+			document.execCommand('underline');
+		}
+		left.onclick=function(){
+			if(getSelection().toString().length==0){
+				alert('no select!!')
+			}
+			document.execCommand('justifyLeft')
+		}
+		center.onclick=function(){
+			if(getSelection().toString().length==0){
+				alert('no select!!')
+			}
+			document.execCommand('justifyCenter')
+		}
+		right.onclick=function(){
+			if(getSelection().toString().length==0){
+				alert('no select!!')
+			}
+			document.execCommand('justifyRight')
+		}
+		fontsize.onchange=function(){
+			if(getSelection().toString().length==0){
+				alert('no select!!')
+			}
+			document.execCommand('fontsize',false,this.value)
+		}
+		view.onclick=function(){
+			code.value=editor.innerHTML;
+		}
+		code.onblur=function(){
+			editor.innerHTML=code.value;
+		}
+	</script>
+</body>
+</html>

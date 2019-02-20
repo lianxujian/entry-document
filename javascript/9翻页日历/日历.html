@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#cal{width: 350px;height: 350px;border:1px solid red;}
+		#cal span{float: left;width: 50px;height: 50px;line-height: 50px;text-align:center;}
+	</style>
+</head>
+<body>
+	<div id="cal">
+		<span>一</span>
+		<span>二</span>
+		<span>三</span>
+		<span>四</span>
+		<span>五</span>
+		<span>六</span>
+		<span>日</span>
+	</div>
+	<select id="sel">
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+		<option>8</option>
+		<option>9</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+	</select>
+	<script>
+		var m=prompt("您需要几月份的日历");
+		
+		var days=[31,28,31,30,31,30,31,31,30,31,30,31];
+		var blankCount=[6,0,1,2,3,4,5];
+		var cal=document.getElementById("cal");
+		var date=new Date().getDate();
+		var sel=document.getElementById("sel");
+		var options=sel.getElementsByTagName("option");
+
+		/*sel.onchange=function(){
+			var m=sel.options.selectedIndex+1;
+			return m;
+		}*/
+		var week=new Date(2016,m-1,1).getDay();
+		for(var i=0;i<42;i++){
+			var temSpan=document.createElement("span");
+			cal.appendChild(temSpan);
+		}
+
+		var spans=cal.getElementsByTagName("span");
+		for(var i=1;i<=days[m-1];i++){
+			spans[7+blankCount[week]+i-1].innerHTML=i;
+			spans[date+7+blankCount[week]-1].style.backgroundColor="orange";
+		}
+
+	</script>
+</body>
+</html>

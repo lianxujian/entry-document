@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//自定义事件 名字(字符串)	关联多个函数(数组)
+		/*function MyEvent(){
+			this.handler={};
+		}
+		MyEvent.prototype.addEvent=function(eventName,func){	//"abc"
+			if(typeof this.handler[eventName]=="undefined"){
+				this.handler[eventName]=[];		//"abc" fn1 fn2
+				//只有第一次调用addEvent建立数组
+			}
+			this.handler[eventName].push(func);		//dom2级效果
+		}
+		MyEvent.prototype.doEvent=function(str){	//"abc"
+			var arr=this.handler[str];
+			if(arr instanceof Array){
+				for(var i=0;i<arr.length;i++){
+					arr[i]();
+				}
+			}
+		}
+		var e=new MyEvent();
+		e.addEvent("abc",function(){
+			alert("abc method");
+		})
+		e.addEvent("abc",function(){
+			alert("1412B");
+		})
+		e.doEvent("abc");*/
+
+
+
+		function MyEvent(){
+			this.handler={};
+		}
+		MyEvent.prototype.addEvent=function(eventName,func){	//"abc"
+			if(typeof this.handler[eventName]=="undefined"){
+				this.handler[eventName]=[];		//"abc" fn1 fn2
+				//只有第一次调用addEvent建立数组
+			}
+			this.handler[eventName].push(func);		//dom2级效果
+		}
+
+		MyEvent.prototype.removeEvent=function(eventName,func){
+			if(this.handler[eventName] instanceof Array){
+				for(var i=0;i<this.handler[eventName].length;i++){
+					if(this.handler[eventName][i]==func){
+						this.handler[eventName].splice(i,1);
+						break;
+					}
+				}
+			}
+		}
+
+		MyEvent.prototype.doEvent=function(obj){	//"abc"
+			if(!obj.target){
+				obj.target=this;
+			}
+			var arr=this.handler[obj.name];
+			if(arr instanceof Array){
+				for(var i=0;i<arr.length;i++){
+					arr[i](obj);
+				}
+			}
+		}
+
+		/*function f1(o){
+			alert("abc method"+o.kc);
+		}
+		function f2(o){
+			alert("1412B"+o.kc);
+		}
+		var e=new MyEvent();
+		e.addEvent("abc",f1)
+		e.addEvent("abc",f2)
+		e.doEvent({name:"abc",kc:"JS"});
+		e.removeEvent("abc",f1)
+		e.removeEvent("abc",f2)
+		e.doEvent({name:"abc",kc:"JS"});*/
+
+		function Person(name,age){
+			MyEvent.call(this);
+			this.name=name;
+			this.age=age;
+		}
+		function F(){};
+		F.prototype=MyEvent.prototype;
+		Person.prototype=new F();
+		Person.prototype.constructor=Person;
+
+		var p=new Person("zs",20);
+		p.addEvent("exam",function(o){
+			alert(o.target.name+"examing...")
+		})
+		p.doEvent({name:"exam"})
+	</script>
+</body>
+</html>

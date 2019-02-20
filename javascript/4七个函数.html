@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//	1
+		var arr=[2,4,23,6];
+		var sum=0;
+		arr.forEach(function(v,i,a){	//元素，下标，arr 
+			a[i]=v+1;					// forEach改变原数组
+			sum+=v;
+		})
+		alert(arr)
+		alert(sum)
+		var ar=arr.map(function(x){		// map不改变原数组
+			return x*x;
+		})
+		alert(ar)			// [9,25,576,49]
+
+	//	2
+		var arr1=["电视","电脑","空调","手机","洗衣机"];
+		var r=arr1.filter(function(x){
+			return x.indexOf("电")!=-1;
+		})
+		alert(r)			//["手机","洗衣机"]
+
+	//	3
+		var arr1=["电视","电脑","空调","手机","洗衣机"];
+		var flag=arr1.some(function(x,y){	//every
+			return x.length>=3;
+		})
+		alert(flag);		// true
+
+		var arr5=[1,13,5,6];
+		var s=arr5.reduce(function(x,y){
+			if(x>y){
+				return x;
+			}else{
+				return y;
+			}
+		},10);
+		alert(s)			// 13
+
+		var arr6=[2,3,2];
+		var a=arr6.reduceRight(function(x,y){
+			return Math.pow(y,x);
+		})
+		alert(a);			// 512			3*3=9;2^9=512;
+	</script>
+</body>
+</html>

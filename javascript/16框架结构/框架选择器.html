@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+	<style>
+		.test{background-color: red;}
+	</style>
+</head>
+<body>
+	<p class="bg">abc111</p>
+	<p id="dog">abc222</p>
+	<p class="bg">fdf55</p>
+	<p id="dog">abc33</p>
+	<p id="dog">abc444</p>
+	<button id="btn">click</button>
+	<script>
+		/*new myQuery(function(){
+			alert("hello")
+		})
+		alert(new myQuery("#dog").eles.length)*/
+		/*$(function(){
+			alert("hello")
+		})
+		$(function(){
+			alert("hello2222")
+		})
+		alert($("#dog").eles.length)*/
+
+		//alert($("p").eq(3).innerHTML)
+		//alert($("p").eq(3).html())		//	重点理解 %%%%%%%
+		console.log($("p").eq(3))
+		/*$("p").click(function(){
+			alert($(this).html())
+		})*/
+		/*$("#btn").click(function(){
+			alert("hello")
+			$("p").hide();
+		})
+		$("#btn").click(function(){
+
+			alert("nihao")
+			$("p").show();
+		})*/
+		/*var c="white";
+		$("#btn").click(function(){
+			if(c!="blue"){
+				$("p").eq(4).css("background-color","blue");
+				c="blue";
+			}else{
+				$("p").eq(4).css("background-color","red");
+				c="red";
+			}
+		})*/
+
+		/*$("#btn").click(function(){
+			$("p").css({"background-color":"blue","color":"yellow"});
+			$("p").attr("title","abc");
+		});
+
+		$("p").click(function(){
+			$(this).attr("className","test");
+		});
+
+		$("#btn").click(function(){
+			alert("nihao")
+			$("p").attr("className","");
+			$("p").css("background-color","");
+		})*/
+
+		/*$("#btn").click(function(){
+			alert($("body").find("p").eles.length);
+		})*/
+
+		$("p").click(function(){
+			alert($(this).index())
+		})
+	</script>
+</body>
+</html>

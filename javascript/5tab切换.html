@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	a{text-decoration: none;}
+	.cura{background-color: red;}
+	#content{width:200px;height:180px;border:1px solid red;}
+	#content div{display: none;}
+	#content .cur{display: block;}
+</style>
+<body>
+	<div id="header">
+		<a href="#" class="cura">aa</a>
+		<a href="#">bb</a>
+		<a href="#">cc</a>
+	</div>
+	<div id="content">
+		<div class="cur">aa content</div>
+		<div>bb content</div>
+		<div>cc content</div>
+	</div>
+	<script>	
+		function tab(hId,cId){
+			this.header=document.getElementById(hId);
+			this.links=this.header.getElementsByTagName('a');
+			this.content=document.getElementById(cId);
+			this.divs=this.content.getElementsByTagName('div');
+			this.info();
+		} 
+		tab.prototype.info=function(){
+			var that=this;
+			for(var i=0;i<this.links.length;i++){
+				this.links[i].index=i;
+				this.links[i].onclick=function(){
+					that.myclick(this);
+				}
+			}
+		}
+
+		tab.prototype.myclick=function(r){
+			for(var j=0;j<this.divs.length;j++){
+				this.divs[j].className="";
+				this.links[j].className="";
+			}
+			this.divs[r.index].className='cur';
+			this.links[r.index].className='cura';			
+		}
+		var p=new tab('header','content')
+	</script>
+</body>
+</html>

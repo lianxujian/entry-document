@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承</title>
+</head>
+<body>
+	<script>
+		//一、原型链
+		/*function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.info=function(){
+			return this.name+","+this.age;
+		}
+		//创建一个新的构造函数
+		function Student(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		//改变构造函数的原型对象
+		Student.prototype=new Person();
+		console.log(Student.prototype)
+		//人工添加constructor指回student
+		Student.prototype.constructor=Student;
+		//创建实例
+		var s=new Student("gx",24);
+		//console.log(s.info());
+		//console.log(s.constructor);
+		//缺点：改变内容的时候会改变原型
+	
+
+		//通过实例获取构造函数的原型对象
+		console.log(Object.getPrototypeOf(s));//?
+		
+		//判断构造函数的原型对象是不是实例对象的原型
+		//构造函数.prototype.isPrototypeOf(原型)
+		console.log(Student.prototype.isPrototypeOf(s));*/
+
+		//二、借用构造函数
+		/*function Person(name,age){
+			this.name=name;
+			this.age=age;
+			this.friends=["aaa"];
+		}
+		function Student(name,age,school){//多传一个参数，输出
+			//借用构造函数Person,将指向由原来构造函数的window变为实例对象
+			Person.call(this,name,age);	//继承了父类的所有属性，解决了父类构造函数的实例上引用数据被共享的问题
+			this.school=school;
+		}
+		//创建实例对象
+		var s=new Student("gx",24,"wz");
+		s.friends.push("bb");
+		console.log(s.friends);
+		//没有方法（即使有方法，也不能输出student中后加的school）
+		//console.log(s.info());
+		var s1=new Student("jj",27,"hd");
+		s1.friends.push("cc");
+		console.log(s1.friends);
+		//console.log(s1.info()) 
+		console.log(s instanceof Student);
+		console.log(s instanceof Person);
+		console.log(Person.prototype.isPrototypeOf(s))*/
+
+		//三、组合方法
+		/*function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.info=function(){
+			return this.name+","+this.age;
+		}
+		function Student(name,age,school){
+			//借用构造函数继承属性
+			Person.call(this,name,age);
+			this.school=school;
+		}
+		//原型链方法继承属性和方法
+		Student.prototype=new Person();
+		//因为在Student中又传了一个参数，为了输出，需要改变方法
+		Student.prototype.info=function(){
+			//console.log(this);
+			return Person.prototype.info.call(this)+","+this.school;
+		}
+
+		var s=new Student("gx",24,"wz");
+		console.log(s.info()); */
+		//需要先继承再改变方法
+
+		//四、原型式继承
+		//首先，创建一个对象
+		/*var obj={
+			name:"gx",
+			age:24
+		}
+	//标准浏览器的兼容
+		/*var b=Object.create(obj); 
+		alert(b.name+','+b.age)*/
+	//原型式继承（复制已有对象）;支持各种浏览器
+		/*function copy(object){
+			//构造函数创建对象
+			function F(){};
+			//使对象的prototype指向已有对象（被复制的对象）
+			F.prototype=object;
+			//输出构造函数F的实例
+			return new F();
+		}
+		var b=copy(obj);
+		console.log(b);*/
+
+		//五、寄生式继承(用原型式创建对象，在对象上添加方法)
+		//链式操作
+		/*b.info=function(){
+			alert("happy");	
+			//如果没有这个返回值，无法进行链式操作！！！
+			return this;
+		}
+		b.newyear=function(){
+			alert("newyear");
+			return this;
+		}
+		//链式操作！！！
+		b.info().newyear().info().newyear().newyear();*/
+
+		//六、寄生组合式继承
+		//先用原型式继承
+		/*function copy(obj){
+			function F(){};
+			F.prototype=obj;
+			return new F();
+		}
+		//寄生组合
+		function inherit(sub,sup){		//sub为子类，sup为父类
+			if(Object.create){	//高版本浏览器
+				//创建一个对象，为父类的原型对象
+				var proto=Object.create(sup.prototype);
+			}else{	//低版本
+				//通过原型式创建对象(复制的是父类的原型对象)
+				var proto=copy(sup.prototype);
+			}
+			//使所创对象的constructor指向子类
+			proto.constructor=sub;
+			//使子类的原型对象指向proto（父类的原型对象）
+			sub.prototype=proto;
+		}
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.info=function(){
+			return this.name+","+this.age;
+		}
+		function Student(name,age,school){
+			Person.call(this,name,age);
+			this.school=school;
+		}
+		inherit(Student,Person);
+		var s=new Student("gx",24,"wz");
+		console.log(s.info());
+		console.log(s.constructor)
+		console.log(s.prototype)		//？*/
+
+		
+
+
+		//实际应用
+		/*function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.info=function(){
+			return this.name+","+this.age;
+		}
+		function Student(name,age,school){
+			//借用构造函数继承属性
+			Person.call(this,name,age);
+			this.school=school;
+		}
+		//继承方法
+		if(Object.create){	//高版本
+			Student.prototype=Object.create(Person.prototype);
+		}else{		//低版本
+			function F(){};
+			F.prototype=Person.prototype;
+			Student.prototype=new F();
+		}
+		Student.prototype.constructor=Student;
+		var s=new Student("gx",24,"wz");
+		console.log(s);
+		console.log(s.info());*/
+
+	</script>
+</body>
+</html>

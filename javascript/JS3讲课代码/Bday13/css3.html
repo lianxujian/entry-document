@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		p{
+			color:red;
+		}
+		div{
+			width:100px;
+		}
+		span
+		{
+			background: #ccc;
+		}
+	</style>
+	<style>
+		
+	</style>
+</head>
+<body>
+   <P class="ys bk">dsfadfadf</P>
+	<script>
+		alert (document.styleSheets.length);
+		var s1=document.styleSheets[0];
+		var rules=s1.cssRules?s1.cssRules:s1.rules; //cssRules   rules ie
+		alert(rules[2].selectorText);
+		alert(rules[2].style.cssText);
+
+		s1.insertRule(".ys{background:red}",rules.length);
+		//s1.addRule(".ys","{background:red}",rules.length); //ie
+		alert("");
+		//s1.removeRule(rules.length-1);
+		s1.deleteRule(rules.length-1);
+
+		//document.createStyleSheet()
+		var objHead=document.getElementsByTagName('head')[0];
+		var objStyle=document.createElement("style");
+		objStyle.innerHTML=".bk{border:1px solid red}";
+		objHead.appendChild(objStyle);
+	</script>
+</body>
+</html>

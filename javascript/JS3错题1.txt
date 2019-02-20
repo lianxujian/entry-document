@@ -1,0 +1,358 @@
+1、var  s={"x":1,"y":29,"z":42}
+var c = JSON.parse(s);
+console.log(c）的结果：：
+
+  正确答案：A
+
+A  以上都不正确
+
+B  {x:1, y:29, z:42}
+
+C  Object {x=1, y=29, z=42}
+
+D  {x=1, y=29, z=42}
+
+如果var s=‘{"x":1,"y":29,"z":42}’，答案就选C
+
+4、当创建的函数执行完毕后，其执行环境的作用域链会被销毁，那么它的活动对象（）留在内存中：
+
+  正确答案：A
+
+A  会
+
+B  以上说法都不对
+
+C  不会
+
+D  痕迹
+
+15、所有原型对象都会自动获得一个（）属性：
+
+  正确答案：C
+
+A  以上都不对
+
+B  prototype
+
+C  constructor
+
+D  function
+
+17、function createObj(name,sex,age){
+                 var o=new Object()
+                     o.name=name;
+                     o.sex=sex;
+                          }
+
+               return  o
+  }
+var p1=createObj(&quot;张三&quot;,&quot;男&quot;,19)
+p1.constructor指向：：
+
+  正确答案：C
+
+A  object
+
+B  以上都不正确
+
+C  Object
+
+D  createObject
+
+9、下面关于hasOwnProperty()方法说法正确的有(      )：
+						 
+
+正确答案：A ; C
+
+A 属于某个实例的属性，而不属于原型的就返回真，否则返回假
+
+B 以上都不正确
+
+C 格式为实例名.hasOwnProperty("属性名")
+
+D 格式为构造函数名.hasOwnProperty("属性名")
+
+3、所有在全局作用域中定义的属性和函数，都是Global对象的属性和函数：：
+
+正确答案：错
+
+4、在JavaScript中，任何合法的函数都可以作为对象的构造函数：：
+
+正确答案：对
+
+16、（）能用寄生式继承：
+
+  正确答案：D
+
+A  继承
+
+B  对象
+
+C  函数
+
+D  任何能够返回新对象的函数
+
+17、寄生式继承的思路，创建一个仅用于（）的函数，该函数在内部以某种方式来增强对象，最后再像真地是它做了所有工作一样返回对象。：
+
+  正确答案：C
+
+A  封装对象
+
+B  封装函数
+
+C  封装继承过程
+
+D  封装属性和方法
+
+18、函数被作为构造函数执行，它内部的this属性将引用（）：：
+
+  正确答案：A
+
+A  函数本身
+
+B  父级函数
+
+C  window
+
+D  指定函数
+
+19、SubType继承了SuperType，而继承的本质是（）：：
+
+  正确答案：B
+
+A  重写原型属性
+
+B  重写原型对象
+
+C  调用SuperType的属性和方法
+
+D  重写原型方法
+6、关于javaScript继承方法正确的是（   ）：：
+						 
+
+正确答案：B ; C ; D
+
+A 继承式继承
+
+B 借用构造函数法
+
+C 原型链继承
+
+D 原型式继承
+
+7、String.prototype.trim=function(){};var num=&quot;50&quot;;num上是不可以调用trim这个方法的。：：
+
+正确答案：错
+
+1、下面关于构造函数、原型和实例的关系说法正确的是(     )：
+						 
+
+正确答案：A ; B ; C ; D
+
+A 获取原型所在的构造函数的属性为contructor
+
+B 一个构造函数可以创建多个实例
+
+C 构造函数必有原型对象
+
+D 所有实例共享同一个构造函数原型中的方法和属性
+
+3、以下document.execCommand（）用法,未支持的有（）？：
+						 
+
+正确答案：A ; B ; C ; D
+
+A DirLTR
+
+B BrowseMode
+
+C BlockDirLTR
+
+D BlockDirRTL
+
+5、execCommand(&quot;fontname&quot;,&quot;&quot;,字体)可以设置字体：：
+
+正确答案：对
+
+6、Javascript富文本编辑器使我们添加、编辑网站中的文章更加方便和容易，但富文本编辑器不能实现所见即所得。：：
+
+正确答案：错
+
+3、js中DOM节点全可以编辑状态的方法为：：
+
+  正确答案：B
+
+A  designMode = "false";
+
+B  designMode = "on";
+
+C  designMode = true;
+
+D  designMode = "ok";
+
+11、JSON有两种表示结构：：
+						 
+
+正确答案：B ; C ; D
+
+A 以上都不对
+
+B 数组
+
+C 对象
+
+D object
+
+E 
+
+F number
+
+7、关于删除或者清除在有（）？：
+						 
+
+正确答案：A ; B ; C ; D
+
+A Underline
+
+B Unselect
+
+C UnBookmark
+
+D Unlink
+
+G 以上都不正确
+
+H string
+
+ 字符串
+
+9、JSON每一个属性名和值间用“=”：：
+
+正确答案：错
+
+6、JSON有两种表示结构：：
+						 
+
+正确答案：C ; D
+
+A 字符串
+
+B 以上都不对
+
+C 对象
+
+D 数组
+
+12、initMouseEvent()初始化方法bubbles设置为冒泡：：
+
+  正确答案：D
+
+A  以上都不正确
+
+B  是false
+
+C  null
+
+D  是true 
+
+15、（）对象提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能  ：
+
+  正确答案：D
+
+A  navigator
+
+B  screen
+
+C  location
+
+D  window 
+
+10、语句：window.location.replace(&quot;http://www.xxxxxxxx.net&quot;);解释正确的是（）：
+
+  正确答案：C
+
+A  以上都不对
+
+B  不会跳转
+
+C  跳转后没有后退功能
+
+D  跳转后有后退功能 
+
+14、 (function(){
+        a=5;
+        alert(window.a);
+        var a=10;
+        alert(a);
+    })()
+
+    等价于：
+
+    (function(){
+	var a;
+        a=5;
+        alert(window.a);
+        a=10;
+        alert(a);
+    })()
+    两个alert输出的结果是什么？(     )
+：
+
+  正确答案：B
+
+A  10,10
+
+B  undefined,10
+
+C  5,5
+
+D  5,10
+
+18、       var name=&quot;global&quot;;
+       var obj={
+          name:&quot;obj&quot;,
+          dose:function(){
+             this.name=&quot;dose&quot;;
+             return function(){
+                return this.name;
+             }
+          }
+       }
+       alert(obj.dose().call(this));以上代码的弹出结果是（   ）
+：
+
+	解释：this指向window；
+
+  正确答案：B
+
+A  dose
+
+B  global
+
+C  obj
+
+D  undefined
+
+16、CSSStyleSheet对象的cssRules属性说法正确的是（）：
+
+  正确答案：B
+
+A  以类null的形式返回样式表中所有 CSS 规则
+
+B  以类数组的形式返回样式表中所有 CSS 规则
+
+C  以类数值的形式返回样式表中所有 CSS 规则
+
+D  以类字符串的形式返回样式表中所有 CSS 规则
+
+17、CSSStyleSheet对象的href属性说法正确的是（）：
+
+  正确答案：C
+
+A  以上都不对
+
+B  返回样式表的位置（URL），如果是内联样式表，则为 true。
+
+C  返回样式表的位置（URL），如果是内联样式表，则为 null。
+
+D  返回样式表的位置（URL），如果是内联样式表，则为 false。

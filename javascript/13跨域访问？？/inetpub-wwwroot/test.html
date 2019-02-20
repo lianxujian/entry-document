@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">按钮</button>
+	<script>
+		function f(r){
+			alert(r);
+		}
+		function fun(r){
+			alert("默认处理"+r);
+		}
+		var btn=document.getElementById("btn");
+		btn.onclick=function(){
+			var scr=document.createElement("script");
+			scr.src="http://localhost:8000/h.php?xh=003&cb=f";
+			document.body.appendChild(scr);
+			document.body.removeChild(scr);
+		}
+
+	</script>
+</body>
+</html>

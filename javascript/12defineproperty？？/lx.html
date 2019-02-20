@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		function Student(mz){
+			/*var xh=0;
+			xh++;*/
+			var cj;
+			function setCj(n){
+				if(n>=0 && n<=100){
+					cj=n;
+				}
+			}
+			function getCj(){
+				if(cj==undefined){	// typeof cj=="undefined"
+					return "成绩不合法"
+				}else{
+					return cj;
+				}
+			}
+
+			Object.defineProperties(this,{
+				mz:{
+					value:mz
+				},
+				xh:{
+					value:++this.xh[0]
+				},
+				cj:{
+					set:setCj,
+					get:getCj
+				}
+			})
+		}
+		Student.prototype.xh=[0];
+		var p=new Student("连旭健");
+		p.mz="ls";
+		//alert(p.mz)
+		p.xh="007"
+		alert(p.mz+","+p.xh)
+		p.cj=80;
+		alert(p.cj)
+		var p1=new Student("ls");
+		alert(p1.mz+","+p1.xh)
+	</script>
+</body>
+</html>

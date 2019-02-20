@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p id="p">aaa</p><a id="a" href="#">bbbb</a>
+	<button id="btn">ccc</button>
+	<script>
+		function showcontent(objId){
+			var that=this;
+			this.obj=document.getElementById(objId);
+			this.obj.onclick=function(){
+				that.myclick(this);
+			}
+		}
+		showcontent.prototype.myclick=function(r){
+			alert(r.innerHTML)
+		}
+		var tags=document.getElementsByTagName('*');
+		for(var i=0;i<tags.length;i++){
+			if(tags[i].id){
+				new showcontent(tags[i].id)
+			}
+		}
+	</script>
+</body>
+</html>

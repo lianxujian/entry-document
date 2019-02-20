@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+</head>
+<style>
+	a{text-decoration: none;}
+	.cura{background-color: red;}
+	#content{width:200px;height:180px;border:1px solid red;}
+	#content div{display: none;}
+	#content .cur{display: block;}
+</style>
+<body>
+	<div id="header">
+		<a href="#" class="cura">aa</a>
+		<a href="#">bb</a>
+		<a href="#">cc</a>
+	</div>
+	<div id="content">
+		<div class="cur">aa content</div>
+		<div>bb content</div>
+		<div>cc content</div>
+	</div>
+	<script>	
+		$("#header").find("a").click(function(){
+			$("#header").find("a").attr("className","");
+
+			$("#header").find("a").eq($(this).index()).attr("className","cura");
+			$("#content").find("div").attr("className","");
+			$("#content").find("div").eq($(this).index()).attr("className","cur");
+		})
+	</script>
+</body>
+</html>

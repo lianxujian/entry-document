@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="a.php" method="post">
+		<input type="text" id="text">
+		<input type="password" id="password">
+		<input type="submit" id="submit" value="提交">
+		
+	</form>
+	<button id="btn">按钮</button>
+	<script>
+		var form=document.forms[0];
+		var text=document.getElementById('text');
+		var password=document.getElementById('password');
+		var submit=document.getElementById('submit');
+		var btn=document.getElementById('btn');
+		form.onsubmit=function(){
+			if(text.value==''){
+				alert('输入框不能为空')
+				return false;
+			}
+			if(password.value==''){
+				alert('密码框不能为空')
+				return false;
+			}
+			return true;
+		}
+		document.onkeyup=function(e){
+			var event=e||event;
+			if(event.keyCode==13){
+				var flag=form.onsubmit();
+				if(flag){
+					form.submit();
+				}
+			}
+		}
+		btn.onclick=function(){
+			var flag=form.onsubmit();
+			if(flag){
+				form.submit();
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">打折</button><span id="info"></span>
+	<script>
+	     var doc=document;
+		 var objBtn=doc.getElementById("btn");
+		 var objInfo=doc.getElementById("info");
+		 var f=0;
+		 objBtn.onclick=function(){
+		 
+		 	if(isDiscount()){
+		 		objInfo.innerHTML="可以打九折";
+		 	}
+		 	else
+		 	{
+		 		objInfo.innerHTML="积分不足原价";
+		 	}
+		 }
+
+		 function isDiscount(){
+		 		f+=parseInt(Math.random()*10)+1;
+		 	  if(f>30){
+		 	  	return true;
+		 	  }
+		 	  else
+		 	  {
+		 	  	return false;
+		 	  }
+		 }
+		 var frag=doc.createDocumentFragment();
+		 for(var i=0;i<10;i++){
+		 	var temp=doc.createElement("p");
+		 	temp.innerHTML=i;
+		 	frag.appendChild(temp);
+		 
+		 }
+		 	doc.body.appendChild(frag);
+	</script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+6、以下哪个是观察者模式的特点：：
+						 
+正确答案：A ; D 
+A?定义了一种一对的依赖关系
+B?调停者模式将对象的行为和协作抽象化
+C?一个用来存储另外一个对象内部状态的快照的对象
+D?让多个观察者对象同时监听某一个主题对象。这个主题对象在状态上发生变化时，会通知所有观察者对象，使他们能够自动更新自己。
+
+8、以下是享元模式的说法正确的是 ：：
+						 
+正确答案：B ; D 
+A?将实现部分和抽象部分分离开来， 以便两者可以独立的变化
+B?享元模式用于减少应用程序所需要的对象的数量
+C?表示一个作用于某个对象结构中的各元素的操作
+D?这是通过将对象的内部状态划分为内存数据和外在数据两类而实现的。
+
+10、var kxy = new Object();
+Object.defineProperty(kxy, &quot;sex&quot;, {
+    value: &quot;female&quot;,
+    enumerable: false
+});
+Object.defineProperty(kxy,'name',{
+ value:'admin',
+ enumerable:true
+})
+console.log(JSON.stringify(kxy));的结果是：：
+? 正确答案：D 
+A ?以上都不正确
+B ?{"sex":"female","name":"admin"}
+C ?{"sex":"female"}
+D ?{"name":"admin"}
+
+11、var kxy = new Object();
+Object.defineProperty(kxy, &quot;sex&quot;, {
+    value: &quot;female&quot;,
+    enumerable: false
+});
+Object.defineProperty(kxy,'name',{
+ value:'admin',
+ enumerable:true
+})
+console.log(Object.keys(kxy));的结果是：：
+? 正确答案：A 
+A ?["name"]
+B ?[ "sex"]
+C ?以上都不正确
+D ?["sex", "name"]
+
+16、var oo = {
+    name : '张三',
+    get sex(){
+        return 'man';
+    }
+};
+oo.sex = 'woman';
+console.log(oo.sex);  的结果是：：
+? 正确答案：D 
+A ?woman
+B ?undefined
+C ?张三
+D ?man
+
+9、var s=&quot;font-size:12px;color:red&quot;
+通过字符串设置内联样式正确的是：：
+						 
+正确答案：A ; C 
+A?e.style.cssText=s
+B?以上都不正确
+C?e.setAttribute("style",s)
+D?e.className="s"
+
+7、js基于原型的继承机制是动态的：对象从其原型继承属性，如果创建对象实例以后原型的属性发生了改变，不会影响到继承这个原型的所有实例对象。：：
+正确答案：错 
+
+8、var oo = {
+    name : '张三',
+    get sex(){
+        if(this.sexx){
+            return this.sexx; 
+        }else{
+            return 'man'; 
+        }
+    }, set sex(val){
+        this.sexx = val; 
+    }
+};
+oo.sex = 'woman';
+console.log(oo.sex); 的结果是：：
+? 正确答案：D 
+A ?man
+B ?undefined
+C ?张三
+D ?woman
+
+9、var kxy = new Object();
+Object.defineProperty(kxy, &quot;sex&quot;, {
+    value: &quot;female&quot;,
+    enumerable: false
+});
+Object.defineProperty(kxy,'name',{
+ value:'admin',
+ enumerable:true
+})
+console.log(Object.keys(kxy));的结果是：：
+? 正确答案：D 
+A ?以上都不正确
+B ?["sex", "name"]
+C ?[ "sex"]
+D ?["name"]
+
+19、XMLHttpRequest对象实现的Ajax请求时:：
+? 正确答案：C 
+A ?默认能跨域
+B ?不受到同源策略的限制
+C ?受到同源策略的限制
+D ?以上都不正确
+
+22、jsonp支持的数据传输方式：：
+? 正确答案：D 
+A ?post
+B ?target
+C ?action
+D ?get
+
+23、&quot;http://www.tt.com/jsonServerResponse?jsonp=jsonpCallback &quot; 
+这个 url 是跨域服务器取 json 数据的接口，参数为回调函数的名字，返回的格式为:：
+? 正确答案：B 
+A ?back
+B ?jsonpCallback()
+C ?jsonp
+D ?json
+
+4、关于jsonp说法正确的是：：
+						 
+正确答案：A ; C 
+A?动态添加<script>标签来调用服务器提供的js脚本
+B?jsonp不可以跨域调用数据
+C?为了便于客户端使用数据，逐渐形成了一种非正式传输协议，人们把它称作JSONP
+D?以上都不正确
+5、jsonp传输数据的过程中： ：
+						 
+正确答案：B ; D 
+A?以上都不正确
+B?它不受同源策略的影响，因此可以使用它们从其他服务器请求数据
+C?设置<script>元素的href属性
+D?包含JSON编码数据的响应体会自动解码（即执行）
+6、要解决跨域的问题，可以用什么方法：：
+						 
+正确答案：C ; D 
+A?以上都不正确
+B?无法跨域
+C?window.name来进行跨域
+D?通过jsonp跨域
+
+7、使用&lt;script&gt;元素实现脚本操作HTTP可以跨域通信而不受限与同源策略.：：
+正确答案：对 
+√
+×
+8、Web页面上调用js文件时不受是否跨域的影响：：
+正确答案：对 
+√
+×
+9、script标签的src属性不能跨域：：
+正确答案：错 
+√
+×
+10、JSON 比 XML 更小、更快，更易解析：：
+正确答案：对 
+
+10、 deleteRow(index)：index从1开始：：
+正确答案：错 
+√
+×
+11、删除表格的行的时候，如果你删除了某一行，那么表格行数是马上就变化的：：
+正确答案：对 
+6、js对象的创建方式:正确的是：：
+						 
+正确答案：A ; B ; C 
+Avar newObj=new Object( )
+Bvar newObj={ }
+Cvar newObj=Object.create( )
+Dvar newObj=[ ]
+
+7、var name = &quot;The Window&quot;;
+ 　　var object = {
+ 　　　　name : &quot;My Object&quot;,
+ 　　　　getNameFunc : function(){
+ 　　　　　　return function(){
+ 　　　　　　　　return this.name;
+ 　　　　　　};
+ 　　　　}
+ 　　};
+alert(object.getNameFunc()());
+：
+? 正确答案：B 
+A ?undefined
+B ?The Window
+C ?My Object
+D ?null
+
+10、var name = &quot;The Window&quot;;
+ 　　var object = {
+ 　　　　name : &quot;My Object&quot;,
+ 　　　　getNameFunc : function(){
+ 　　　　　　var that = this;
+ 　　　　　　return function(){
+ 　　　　　　　　return that.name;
+ 　　　　　　};
+ 　　　　}
+ 　　};
+ 　　alert(object.getNameFunc()()) 	//	My Object
+
+
+
+5、以下是享元模式的特点是 ；：
+						 
+
+正确答案：A ; B ; C ; D
+
+A 运行共享技术有效地支持大量细粒度的对象
+
+B 避免大量拥有相同内容的小类的开销(如耗费内存)，使大家共享一个类(元类)。
+
+C 一种是应用在数据层上，主要是应用在内存里大量相似的对象上
+
+D 一种是 应用在DOM层上，享元可以用在中央事件管理器上用来避免给父容器里的每个子元素都附加事件句柄
+
+6、享元（Flyweight）模式缺点（）：：
+
+  正确答案：A
+
+A  增加了实现复杂度，将原本由一个工厂方法实现的功能，修改为了一个享元+一个工厂+一个存储器
+
+B  职责封装，这些操作独立修改和维护
+
+C  将能耗大的操作抽离成一个，在资源密集型系统中，可大大减少资源和内存占
+
+D  对象数量多的情况，可能会增大系统开销
+
+13、以下是js的设计模式的是：：
+						 
+正确答案：A ; B ; C ; D 
+A?享元模式
+B?代理模式
+C?观察者模式
+D?单体模式
+
+3、用一种设计模式就可以解决所有问题：：
+正确答案：错 
+
+10、BOM的核心是history对象：：
+正确答案：错 
+
+10、 function Person(name,age){ 
+   this.name=name;
+   this.age=age;
+   this.show=function()
+   {
+    return this.name+&quot;,&quot;+this.age;
+   }
+  }
+console.log(p instanceof Person)的结果是：：
+? 正确答案：B 
+A ?结果是false
+B ?结果是true
+C ?以上都不正确
+D ?结果是null
+
+13、所有引用类型默认继承了Person类型：：
+正确答案：错 
+
+11、isFinite(null)的结果是：：
+? 正确答案：B 
+A ?是null
+B ?是true
+C ?以上都不正确
+D ?是false
+12、var arr = [a, b, c];
+console.log(arr.constructor（）)结果是：
+：
+? 正确答案：A 
+A ?[ ]
+B ?function array(){ }
+C ?以上都不正确
+D ?function Array(){ }
+
+14、var   arr=[3,4,6,2]
+delete arr[1]
+console.log(arr.length)的值：：
+? 正确答案：C 
+A ?2
+B ?1
+C ?4
+D ?3
+
+9、以下属于 CSS对JS的紧密耦合的是：：
+						 
+正确答案：A ; D 
+A?element.style.backgroundColor= 'blue';
+B?以上都不正确
+C?element.className='bg'
+D?element.style.color = 'red';
+
+13、以下转成布尔值是false的是：：
+						 
+正确答案：A ; B ; D 
+A?null
+B?undefined
+C?0
+D?NaN
+
+8、 编程实践中避免使用全局变量，为过多的全局变量不会消耗大量内存：：
+正确答案：错 
+
+9、原始运算符始终比函数调用要高效：：
+正确答案：对 
+
+12、在js中用 ‘==’ 替换 ‘===’，== 比 ===速度快：：
+正确答案：错 
+
+6、在js中,object在内存中(堆内存)存放,那字符串也应该存在堆内存中：：
+
+正确答案：错	
+
+2、JSON 是一种轻量级的数据交换格式，不适合服务器与 JavaScript 的交互.：：
+
+正确答案：错

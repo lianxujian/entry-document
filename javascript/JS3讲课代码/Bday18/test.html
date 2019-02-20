@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/myquery.js"></script>
+	<script src="js/move.js"></script>
+
+	<style>
+		#one
+		{
+			width:300px;
+			height: 300px;
+			background-color: red;
+			position: absolute;
+		}
+		#two
+		{
+			width:200px;
+			height: 200px;
+			background-color: blue;
+			position: absolute;
+		}
+		#three
+		{
+			width:100px;
+			height: 100px;
+			background-color: green;
+			position: absolute;
+		}
+		p{
+			width: 200px;
+			height: 30px;
+			background-color: red;
+		}
+		div{
+			border:1px solid red;
+		}
+
+	</style>
+</head>
+<body>
+	<div>&nbsp;&nbsp;</div>
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+	<p>4</p>
+	<p>5</p>
+	<p>6</p>
+	<p>7</p>
+	<p>8</p>
+	<p>9</p>
+	<p>10</p>
+	<script>
+		/*$("div").click(function(){
+			
+			alert($(this).attr("id"));
+			return false;
+		});
+		$(document).bindEvent("contextmenu",function(){
+			alert("right");
+			return false;
+		});*/
+		
+		//t=$("div").css("background","pink").animate({"width":600,"height":600});
+       $("p").hover(function(){
+       	 // var _this=this;
+       	  $(this).animate({width:800}).css("background-color","yellow");
+       },
+       function(){
+        $(this).animate({width:200}).css("background-color","red");
+       })
+     /*  $("p").attr("flag",false);
+       $("p").click(function(){
+       	  $(this).eles[0].flag=!$(this).eles[0].flag;
+	       	 if($(this).eles[0].flag)
+	       	 {
+	       	  	$("div").append($(this));
+	       	  
+	       	  }
+	       	  else
+	       	  {
+	       	  	$("body").append($(this));
+	       	  
+	       	  }
+       })*/
+       $("p").click(function(){
+       	   $("div").append($(this));
+       	   $("div").find("p").click(function(){
+       	   		$("body").append($(this));
+       	   });
+       })
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{background-color: rgba(125,125,125,0.5)}
+	</style>
+</head>
+<body>
+	<div id="box">我会变颜色</div>
+	<input type="range" min="0" max="255" step="0.1">
+	<input type="range" min="0" max="255" step="0.1">
+	<input type="range" min="0" max="255" step="0.1">
+	<script>
+		var box=document.getElementById("box");
+		var round=document.getElementsByTagName("input");
+		var color=getComputedStyle(box,null).backgroundColor;
+		var reg=/\d+\.?\d+/g;	//reg=/[\d\.]+/g;
+		var colors=color.match(reg);
+		var r=colors[0];
+		var g=colors[1];
+		var b=colors[2];
+		for(var i=0;i<round.length;i++){
+			round[i].index=i;
+			round[i].onchange=function(){
+				switch(this.index){
+					case 0: r=Math.round(this.value);break;
+					case 1: g=Math.round(this.value);break;
+					case 2: b=Math.round(this.value);break;
+				}
+				box.style.backgroundColor="rgb("+r+","+g+","+b+")";
+			}
+		}
+
+		/*round.onchange=function(){
+			var v=round.value;
+			var r1=Math.min(Math.round(r*v),255);
+			var g1=Math.min(Math.round(g*v),255);
+			var b1=Math.min(Math.round(b*v),255);
+			box.style.backgroundColor="rgb("+r1+","+g1+","+b1+")";
+		}*/
+	</script>
+</body>
+</html>

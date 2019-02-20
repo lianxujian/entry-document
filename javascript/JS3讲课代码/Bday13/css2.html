@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p class="aa bb cc"></p>
+	<script>
+	     var objP=document.getElementsByTagName('p')[0];
+	    /* objP.classList.toggle("ee");
+	     alert(objP.classList);
+	     objP.classList.toggle("ee");
+		 alert(objP.classList);
+		 alert(objP.classList.contains("kk"));*/
+
+		 function csslist(obj){
+		 	if(obj.classList){
+		 		return obj.classList;
+		 	}
+		 	else{
+		 		return new CssList(obj);
+		 	}
+
+		 }
+		 function CssList(obj){
+		 	this.obj=obj;
+		 }
+		 CssList.prototype.contains=function(mz){
+		 	 if(mz.length==0 || mz.indexOf(" ")!=-1){
+		 	 	 throw new Error("名字不合法");
+		 	 }
+		 	 var classes=this.obj.className;
+		 	 if(classes==mz) return true;
+		 	 var reg=new RegExp("\\b"+mz+"\\b");
+		 	 return reg.test(classes);
+		 }
+		 CssList.prototype.add=function(mz){
+		 	 if(mz.length==0 || mz.indexOf(" ")!=-1){
+		 	 	 throw new Error("名字不合法");
+		 	 }
+		 	 if(!this.contains(mz)){
+		 	 	this.obj.className+=" "+mz;
+		 	 }
+		 }
+		  CssList.prototype.remove=function(mz){
+		 	 if(mz.length==0 || mz.indexOf(" ")!=-1){
+		 	 	 throw new Error("名字不合法");
+		 	 }
+		 	 if(this.contains(mz)){
+		 	 	this.obj.className=this.obj.className.replace(new RegExp("\\b"+mz+"\\b","g"),"");
+		 	 }
+		 }
+		  CssList.prototype.toggle=function(mz){
+		 	 if(mz.length==0 || mz.indexOf(" ")!=-1){
+		 	 	 throw new Error("名字不合法");
+		 	 }
+		 	 if(this.contains(mz)){
+		 	 	this.remove(mz);
+		 	 }
+		 	 else
+		 	 {
+		 	 	this.add(mz);
+		 	 }
+		 }
+		  CssList.prototype.toString=function(mz){
+		 	return this.obj.className;
+		 }
+		var ins = csslist(objP);
+		ins.toggle("aa");
+		alert(ins);
+		ins.toggle("aa")
+		alert(ins);
+	</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+	<style>
+		#tab{border-collapse: collapse;}
+	</style>
+<body>
+	<table border="1" width="600" id="tab">
+		<tr>
+			<td>xh</td>
+			<td>xm</td>
+			<td>nl</td>
+			<td>cj</td>
+			<td>xf</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>zs</td>
+			<td>21</td>
+			<td>80</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>19</td>
+			<td>ls</td>
+			<td>19</td>
+			<td>85</td>
+			<td>50000</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>mmz</td>
+			<td>20</td>
+			<td>100</td>
+			<td>30000</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>ww</td>
+			<td>18</td>
+			<td>4</td>
+			<td>20000</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>kk</td>
+			<td>3</td>
+			<td>75</td>
+			<td>15000</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>ee</td>
+			<td>16</td>
+			<td>4</td>
+			<td>3000</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>rr</td>
+			<td>22</td>
+			<td>88</td>
+			<td>5000</td>
+		</tr>
+		
+	</table>
+	<script>
+		var tab=document.getElementById("tab");
+		var trs=tab.rows;
+		var headings=trs[0].cells;
+		var state=null;
+		var startObj=null;
+		for(var i=0;trs[i];i++){
+			var td=document.createElement("td");
+			td.innerHTML="5";
+			trs[i].appendChild(td);
+			td.style.display="none";			
+		}
+		for(var i=0;headings[i];i++){
+			headings[i].index=i;
+			headings[i].onmousedown=function(){
+				state="drag";
+				startObj=this;
+			}
+		}
+		tab.onmousemove=function(e){
+			var event=e||window.event;
+			var t=e.target||e.srcElement;
+			var end=t.index;
+			var ex=e.clientX;
+			if(startObj){
+				start=startObj.index;
+			}
+			if(state=="drag"&&start!=end){
+				if((ex<prevX && start>end)||(ex>prevX && start<end)){
+					if(start<end){ //右移动 插入到目标列的下一列前面
+						end=end+1;
+					}
+					for(var i=0;trs[i];i++){
+						trs[i].insertBefore(trs[i].cells[start],trs[i].cells[end]);
+					}
+				}
+				for(var i=0;headings[i];i++){
+					headings[i].index=i;
+				}	
+			}
+			prevX=ex;	//刚刚的鼠标坐标
+		}
+		document.onmouseup=function(){
+			state=null;
+		}
+	</script>
+</body>
+</html>

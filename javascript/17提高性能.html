@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">按钮</button><span id="info"></span>
+	<script>
+		var objbtn=document.getElementById("btn");
+		var objinfo=document.getElementById("info");
+		var j=0;
+		objbtn.onclick=function(){
+			/*j+=parseInt(Math.random()*10+1);*/
+			//console.log(j)
+			if(isDiscount()){
+				objinfo.innerHTML="可以打九折";
+			}else{
+				objinfo.innerHTML="积分不足原价";
+			}
+		}
+		function isDiscount(){
+			j+=parseInt(Math.random()*10+1);
+			if(j>30){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		var frag=document.createDocumentFragment();
+		for(i=0;i<10;i++){
+			var p=document.createElement("p");
+			p.innerHTML=i;
+			frag.appendChild(p);
+		}
+		document.body.appendChild(frag);
+
+		var arr=[1,2,3,4,5,6,7,8,9,0];
+		var loop=Math.ceil(arr.length/8);
+		var n=arr.length%8;
+		var i=0;
+		do{
+			switch(n){
+				case 0:func(arr[i++]);
+				case 7:func(arr[i++]);
+				case 6:func(arr[i++]);
+				case 5:func(arr[i++]);
+				case 4:func(arr[i++]);
+				case 3:func(arr[i++]);
+				case 2:func(arr[i++]);
+				case 1:func(arr[i++]);
+			}
+			n=0;
+		}while(--loop>0);
+		function func(r){
+			console.log(r);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>aa</div>
+	<div>bb</div>
+	<div>ccc</div>
+	<script>
+
+		var xmlhttp=new XMLHttpRequest();
+		var divs=document.getElementsByTagName("div");
+		xmlhttp.open("get","aaa.asp?mz="+encodeURI("中国八维梦")+"&"+new Date().getTime(),true);//true 异步 false同步
+		//new Date().getTime或随机数解决了浏览器的缓存问题(Get)
+
+		xmlhttp.send();
+		xmlhttp.onreadystatechange=function(){
+			//alert(xmlhttp.readyState);
+			//0 未初始化 1 open sending 2 发送完成 3 解析数据 4 完成
+			if(xmlhttp.readyState==4&xmlhttp.status==200){//status 服务器端http状态码
+				divs[0].innerHTML=xmlhttp.responseText; //局部刷新
+
+			}
+		}
+	</script>
+</body>
+</html>
