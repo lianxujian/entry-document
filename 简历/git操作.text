@@ -1,0 +1,75 @@
+GitHub是一个面向开源及私有软件项目托管平台。是版本控制工具   与svn作用类似。
+     是目前最流行的“版本管理系统”
+一、注册
+二、删除仓库
+    1、选中要删除的仓库，点击settings，输入仓库名称，删除
+三、创建仓库
+    1、输入仓库名称
+    2、是否在仓库中加一个readme文档
+四、克隆代码
+    1、使用SSH协议，SSH和HTTPS（传输加密协议，每次都要输入用户名密码）
+    2、将地址复制
+    3、进入workspace，输入git  clone粘贴地址
+五、配置SSH
+    1、ssh-keygen  -t  rsa  -C  wsanhuo@163.com
+    2、打开id_rsa.pub(公钥)，复制代码
+    3、回到github,点击右上角图标点击settings
+    4、点击SSH  and  GPG  keys，点击New  SSH  key，输入title,粘贴key
+    5、点击添加
+    6、git  clone  粘贴地址
+六、同步代码（如何将修改的代码提交到云端）
+    1、进入目录
+    2、设置用户名和密码
+        git  config  --global  user.name  @前面的用户名
+        git  config  --global  user.email  邮箱账号
+    3、git  status    查看文件修改的状态
+    4、git  add  .    将当前文件夹下所有的文件添加到索引仓库（index）里进行跟踪修改
+    5、git  status
+    6、git  commit  -a  -m  "注释信息"    不管是添加还是修改都提交上去
+    7、git  push  提交到远端
+七、分支（多人合作，一般是在分支上开发，在主干上发布）
+    1、git  branch    查看分支
+    2、git  checkout  -b  "20161128-footballSNS-bugfix"   从当前分支上拉一个分支出来
+    3、git  branch
+    4、git  checkout  master  切换分支
+    5、分支的映射  git  push  --set  upstream  origin  20161128-footballSNS-bugfix  在远端创建一个分支
+    6、打开git/config   复制修改分支名称
+八、diff代码   哪个分支在什么时候对哪个文件做了什么样的 改动
+九、merge代码（需要有管理员权限）
+    1、git  merge  20161128-football-bugfix  （merge的同时进行了commit的操作）
+    2、git  push 
+十、git的简写
+    git  config  --global  alias.st  status (配置别名)
+十一、pull代码
+    1、merge线上最新版本
+    2、git  pull
+十二、日志
+    1、git  log
+    说明：log的记录不跟踪分支，记录的是这个项目上所做的所有操作
+    2、git  log  --pretty=oneline   显示在一行
+十三、代码回滚
+    1、git  reset  --hard  
+    说明   git  reset  --hard  用于回滚至最近的一次操作
+十四、解决冲突
+     <<<<<<<<表示当前分支修改的
+    =======
+    >>>>>>>指定某个分支修改的
+
+
+git  fetch   一旦远程主机的版本库有了更新，需要将这些更新取回本地
+
+
+
+
+gitlab提交
+1、git  clone  地址
+2、git  pull   拉下来
+3、git  status   查看
+4、git  checkout  -b  分支名       新建一个分支（git  branch  查看分支）
+5、git  add  src/修改的文件名     添加到index
+6、git  commit  -m  "注释"
+7、git checkout  master     切换到主干
+8、git  merge  分支名      merge你的分支
+9、git  pull  重新拉一下
+10、git  push  origin  master    提交上去
+11、git  branch  -d  分支名      删除你的分支名（随意）

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+</head>
+<body>
+<div class="container">
+    <section class="section">
+        <form action="/show" method="post">
+        <p><input type="text" name="user" placeholder="please input your name"/></p>
+        <p><input type="text" name="pwd" placeholder="please input your password"/></p>
+        <p><button type="submit">登录</button></p>
+        </form>
+        <p><%=error%></p>
+    </section>
+</div>
+<script src="javascripts/jquery-2.1.1.js"></script>
+<script>
+    $(function(){
+        $("input").on("focus",function(){
+          $("p:last").hide();
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			list-style: none;
+		}
+		.box{
+			width:500px;
+			height:500px;
+			background:#000;
+			display:-webkit-flex;
+			/*-webkit-flex-direction:column;	 row|row-reverse|column|column-reverse */
+
+			/* -webkit-align-items:center; */
+			/* 垂直居中 属性还有:flex-start flex-end baseline stretch*/
+
+			-webkit-justify-content:center;
+			/* 水平居中 属性还有:flex-start flex-end space-between space-around; */
+		}
+		.box div{
+			width:100px;
+			height:100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div style="background:red;"></div>
+		<div style="background:blue;"></div>
+		<div style="background:yellow;"></div>
+	</div>
+</body>
+</html>

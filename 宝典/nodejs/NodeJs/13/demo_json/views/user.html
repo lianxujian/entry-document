@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div>用户名：<input type="text" id="user" placeholder="请输入用户名"/></div>
+    <div>密  码：<input type="text" id="pwd" placeholder="请输入密码"/></div>
+    <div>提交：<input type="submit" id="btn"/></div>
+    <script src="javascripts/jquery-1.8.3.min.js"></script>
+    <script>
+        $("#btn").click(function(){
+            var username=$("#user").val();
+            var pwd=$("#pwd").val();
+            var data={
+                user:username,
+                pwd:pwd
+            }
+            $.ajax({
+                url:'http://localhost:3000/dopost',
+                type:'post',
+                data:data,
+                success:function(data){
+                    console.log(data)
+                   $("body").html(data);
+
+                }
+            })
+        })
+    </script>
+</body>
+</html>

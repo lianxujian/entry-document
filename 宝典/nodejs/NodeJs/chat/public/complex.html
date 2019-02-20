@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+        .show{
+            display: block;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<p id="info"></p>
+<div class="login" id="loginArea">
+    <input type="text" id="login"/><button id="login_btn">login</button>
+</div>
+<span id="contain"></span>
+<div class="hidden" id="chat">
+<p id="content"></p>
+<input type="text" id="txt"/>
+<input type="color" id="Color"/>
+<button id="btn">聊天</button>
+</div>
+<script>
+    var btn=document.getElementById("btn");
+    var info=document.getElementById("info");
+    var login=document.getElementById("login");
+    var ontent=document.getElementById("content");
+    var chat=document.getElementById("chat");
+    var loginArea=document.getElementById("loginArea");
+    var contain=document.getElementById("contain");
+    var login_btn=document.getElementById("login_btn");
+    var socket=null;
+        socket=io.connect("http://localhost:9090");
+
+    login_btn.onclick=function(){
+        if(login.value!=''){
+            socket.emit("login",login.value);
+        }else{
+            alert("请输入用户名!");
+        }
+    }
+    btn.onclick=function(){
+        socket.emit("chat",txt.value);
+    }
+    socket.on("loginok",function(){
+        loginArea.className='hidden';
+        chat.className='show';
+    })
+    socket.on("exits",function(user){
+        contain.innerHTML=user;
+    })
+    socket.on("res",function(data){
+       contain.innerHTML+=data+"<br>";
+    });
+    socket.on("system",function(len){
+        info.innerHTML='当前在线人数'+len;
+    })
+</script>
+</body>
+</html>

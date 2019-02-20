@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<p></p>
+<input type="text" id="txt"/>
+<input type="color" id="Color"/>
+<button id="btn">聊天</button>
+<script>
+        var btn=document.getElementById("btn");
+        var Color=document.getElementById("Color");
+        var txt=document.getElementById("txt");
+        var p=document.getElementsByTagName("p")[0];
+        var user='';
+        var socket=null,color="#000";
+        Color.onchange=function(){
+            color=this.value;
+        }
+        socket=io.connect("http://localhost:9090");
+        btn.onclick=function(){
+            socket.emit("chat","<span style=color:"+color+">"+txt.value+"</span>");
+        }
+    socket.on("res",function(data){
+        p.innerHTML+=data+"<br>";
+    })
+</script>
+</body>
+</html>

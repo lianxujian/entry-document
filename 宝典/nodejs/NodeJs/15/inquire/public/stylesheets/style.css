@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+.box{
+    margin:20px;
+}
+.box h3{
+    margin-bottom:20px;
+}
+form input{
+    margin-bottom:20px;
+}
+.btn{
+    margin-bottom:20px;
+}

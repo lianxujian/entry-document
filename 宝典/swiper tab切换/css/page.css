@@ -1,0 +1,41 @@
+.container {
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  height: 100%;
+}
+.container .content {
+  height: 100%;
+  -webkit-flex: 1;
+  overflow-y: scroll;
+}
+.container .content dl {
+  padding: 15px;
+  height: 105px;
+  border-bottom: 1px solid #ccc;
+  display: -webkit-flex;
+}
+.container .content dl dt {
+  width: 90px;
+  height: 70px;
+  margin-right: 10px;
+}
+.container .content dl dt img {
+  width: 100%;
+}
+.container .content dl dd {
+  -webkit-flex: 1;
+}
+.container .content dl dd p label {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background: url(../img/1_r1_c3.gif) no-repeat;
+  background-size: 100%;
+}
+.container .content dl dd p label.on {
+  background: url(../img/1_r1_c1.gif) no-repeat;
+  background-size: 100%;
+}
+.container .content dl dd p span {
+  float: right;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="mapp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>{{title}}</title>
+</head>
+<style>
+    div[ui-view]{
+        border: 3px solid #ff8d5b;
+        min-height:100px;
+    }
+</style>
+<body>
+<p>
+    <span ui-sref="home">首页</span>
+    <span ui-sref="list">列表页</span>
+    <span ui-sref="detail">详情页</span>
+</p>
+<div ui-view></div>
+<script src="../angular.min.js"></script>
+<script src="../angular-ui-router.min.js"></script>
+<script src="index.js"></script>
+<script src="config.js"></script>
+<script src="controller.js"></script>
+</body>
+</html>

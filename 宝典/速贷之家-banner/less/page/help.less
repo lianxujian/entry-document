@@ -1,0 +1,49 @@
+*{
+	-webkit-box-sizing:box-border;
+}
+.help{
+	.head{
+		height:40px;
+		text-align:center;
+		line-height:40px;
+		color:#fff;
+		display:block;
+		font-size:14px;
+		span{
+			float:left;
+			padding-left:15px;
+		}
+	}
+	.content{
+		background:#F5F5F5;
+		.help-list{
+			p{
+				height:45px;
+				background:#fff;
+				border-top:1px solid #F5F5F5;
+				line-height:45px;
+				padding-left:15px;
+				span{
+					float:right;
+					margin-right:15px;
+					-webkit-transform:rotate(90deg);
+				}
+				&:first-child{
+					height:40px;
+					line-height:40px;
+					background:#F5F5F5;
+				}
+			}
+
+		}
+		.help-animal{
+			p{
+				&:first-child{
+					height:auto;
+					line-height:25px;
+					padding-top:5px;
+				}
+			}		
+		}
+	}
+}

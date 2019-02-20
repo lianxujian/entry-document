@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function getXMLHttpRequest() {  
+			var xhr;  
+			if(window.ActiveXObject) {  
+			    xhr= new ActiveXObject("Microsoft.XMLHTTP");  
+			}else if (window.XMLHttpRequest) {  
+			    xhr= new XMLHttpRequest();  
+			}else {  
+			    xhr= null;  
+			}  
+			return xhr;  
+	    }
+		function ajax(options){
+			var defaults={
+				type:'get',
+				params:null,
+				callback:function(data){
+
+				}
+			}
+			var obj=Object.assign({},defaults,options);
+			var xhr=getXMLHttpRequest()
+			if(obj.type=='get'&&obj.params){
+				var params_str='';
+				for(var i in obj.params){
+					params_str+=i+'='+obj.params[i];
+				}
+				xhr.open(obj.type,obj.url+="?"+params_str,true);
+				xhr.send();
+			}else{
+				xhr.open(obj.type,obj.url,true);
+				xhr.send(obj.params)
+			}
+			xhr.onreadystatechange=function(){
+				if(xhr.status==200&&xhr.readyState==4){
+					obj.callback(JSON.parse(xhr.responseText))
+				}
+			}
+		}
+		ajax({
+			type:'get',
+			url:'data.json',
+			callback:function(data){
+				console.log(data)
+			}
+		})
+
+		function jsonp(options){
+			var defaults={
+				url:'',
+				jsonp:'callback',
+				callback:function(data){
+
+				}
+			}
+			var obj=Object.assign({},defaults,options);
+			window.jsonp_callback=function(data){
+				obj.callback(data)
+			}
+			let s=document.createElement('script');
+			s.src=obj.url+"&"+obj.jsonp+"=jsonp_callback";
+			document.querySelector('body').appendChild(s);
+		}
+		jsonp({
+			url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=百度',
+			jsonp:'cb',
+			callback:function(data){
+				console.log(data)
+			}
+		})
+		
+		/*let s=document.createElement('script');
+		s.src='https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=百度&cb=jsonp_callback';
+		document.querySelector('body').appendChild(s);
+		function jsonp_callback(data){
+			console.log(data)
+		}*/
+	</script>
+</body>
+</html>

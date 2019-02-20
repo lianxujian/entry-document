@@ -1,0 +1,43 @@
+.container{
+	display:-webkit-flex;
+	-webkit-flex-direction:column;
+	height:100%;
+	.content{
+		height:100%;
+		-webkit-flex:1;
+		overflow-y:scroll;
+		dl{
+			padding:15px;
+			height:105px;
+			border-bottom:1px solid #ccc;
+			display:-webkit-flex;
+			dt{
+				width:90px;
+				height:70px;
+				margin-right:10px;
+				img{
+					width:100%;
+				}
+			}
+			dd{
+				-webkit-flex:1;
+				p{
+					label{
+						width:12px;
+						height:12px;
+						display:inline-block;
+						background:url(../img/1_r1_c3.gif) no-repeat;
+						background-size:100%;
+						&.on{
+							background:url(../img/1_r1_c1.gif) no-repeat;
+							background-size:100%;
+						}
+					}
+					span{
+						float:right;
+					}
+				}
+			}
+		}
+	}
+}

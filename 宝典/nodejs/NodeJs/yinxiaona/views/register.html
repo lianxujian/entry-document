@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+
+</head>
+<body>
+<div class="container">
+    <section class="section">
+    <p><label for="user"><input type="text" id="user" placeholder="please input your name"/></label></p>
+    <p><label for="user"><input type="password" id="pwd" placeholder="please input your password"/></label></p>
+    <p><button id="btn">注册</button></p>
+    </section>
+</div>
+<script type="text/javascript" src="javascripts/jquery-2.1.1.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#btn").on("click",function(){
+            $.ajax({
+                url:'http://localhost:9090/user',
+                type:'post',
+                data:{
+                    name: $.trim($("#user").val()),
+                    pwd: $.trim($("#pwd").val())
+                },
+                success:function(data){
+                    console.log(data);
+                    if(data.code==0){
+                        alert("注册成功");
+                        location.href='http://localhost:9090/login';
+                    }
+                }
+            })
+        })
+
+    })
+
+</script>
+</body>
+</html>

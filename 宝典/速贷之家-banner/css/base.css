@@ -1,0 +1,92 @@
+* {
+  -webkit-box-sizing: box-border;
+}
+.container .head {
+  display: -webkit-flex;
+  -webkit-justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #1A2E47;
+  color: #fff;
+  font-size: 20px;
+}
+.container .head .h-left {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 15px;
+  border-radius: 15px;
+  background: pink;
+}
+.container .head .fa-bell {
+  color: #fff;
+  font-size: 25px;
+  margin-right: 15px;
+}
+.container .foot {
+  width: 100%;
+  height: 60px;
+  border-top: 1px solid #ccc;
+  display: -webkit-flex;
+}
+.container .foot dl {
+  margin: 5px auto;
+  text-align: center;
+}
+.container .foot dl dt {
+  width: 30px;
+  height: 30px;
+}
+.container .foot dl dt img {
+  width: 100%;
+}
+.container .foot dl dd {
+  color: #808080;
+  font-size: 10px;
+}
+.container .foot dl.on dd {
+  color: #1e2e45;
+}
+.container .foot dl:nth-child(3) dt {
+  margin-left: 8px;
+}
+.product-head {
+  width: 100%;
+  height: 65px;
+  line-height: 65px;
+  background: #1A2E47;
+}
+.product-head div {
+  width: 60%;
+  height: 40px;
+  margin-top: 12px;
+  margin-left: 20%;
+  border-radius: 20px;
+  background: #3B4D65;
+  overflow: hidden;
+  display: -webkit-flex;
+}
+.product-head div p {
+  font-size: 12px;
+  -webkit-flex: 1;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+}
+.product-head div p.bg {
+  background: #01CA7E;
+}
+.container .product-foot {
+  height: 80px;
+  width: 100%;
+  display: -webkit-flex;
+}
+.container .product-foot dl {
+  -webkit-flex: 1;
+  text-align: center;
+  padding-top: 10px;
+}
+.container .product-foot dl.on dd {
+  color: #1e2e45;
+}

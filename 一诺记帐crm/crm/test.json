@@ -1,0 +1,215 @@
+{
+	"variables": [],
+	"info": {
+		"name": "JZ",
+		"_postman_id": "b126f868-1e9f-4313-c72e-29e408fac1fb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "47.92.107.107:3002/corp/invite",
+			"request": {
+				"url": "47.92.107.107:3002/corp/invite",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"code\":\"1278\",\n\t\"name\":\"太原分公司\",\n\t\"phone\":\"15822223335\",\n\t\"province\":\"112\",\n\t\"city\":\"102\",\n\t\"manager\":\"马云\",\n\t\"email\":\"mayun@alibaba.com\",\n\t\"address\":\"\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "47.92.107.107:3002/user/reg",
+			"request": {
+				"url": "47.92.107.107:3002/user/reg",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"invite\":{\r\n        \"phone\":\"15822223335\",\r\n        \"inviteCode\":\"123456\",\r\n        \"validateCode\":\"786512\"\r\n    },\r\n    \"admin\":{\r\n        \"userName\":\"aacbb\",\r\n        \"password\":\"password hash\",\r\n        \"realName\":\"李四\",\r\n        \"phone\":\"15811112226\",\r\n        \"email\":\"aa@yh.com\",\r\n        \"title\":\"13\"\r\n    }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "47.92.107.107:3002/user/login",
+			"request": {
+				"url": "47.92.107.107:3002/user/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n \r\n        \"userName\":\"aacbb\",\r\n        \"password\":\"password hash\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "47.92.107.107:3002/user/add",
+			"request": {
+				"url": "47.92.107.107:3002/user/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjcm0ueWloZS5jb20iLCJzdWIiOiI0ZDM0NWNmOS1kMGQ0LTQyOWUtODU2MS1iOGY5ODQzMjE2ZmMiLCJjb3JwIjoiZmIyZTIwYzUtYzUxZC00ZGJlLWJjMDAtNGE4ODM2ZTEzMzQ2IiwiZXhwIjoxNDk2MTMxMDc5NTEzfQ.yOcrGntv2fQntnaJaOaTNeirknU8sayvvS9O_FbGUmg",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"userName\":\"bbccdd\",\r\n        \"password\":\"password hash\",\r\n        \"realName\":\"张三三\",\r\n        \"phone\":\"15811112227\",\r\n        \"title\":\"13\"\r\n    \r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "47.92.107.107:3002/user/list?offset=0",
+			"request": {
+				"url": "47.92.107.107:3002/user/list?offset=0&limit=10",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjcm0ueWloZS5jb20iLCJzdWIiOiJjMjBhODI2Yi1iZDY4LTQ5NDgtOTJiMi05ZTBjOTAxN2RkYzIiLCJjb3JwIjoiZDM2Njc0OWYtODI1Mi00NmE4LTg4MjgtNzZjNzAzODI5NWRmIiwiZXhwIjoxNDk2MTQ1NDQ0MTEyfQ.fkuYRbEsNCkTct5NFltR7E_20qF0pVCGKofunLpXoBA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "47.92.107.107:3002/user/del/123",
+			"request": {
+				"url": "47.92.107.107:3002/user/del/04128d3b-11c0-4b6b-b9a5-3dccd4c9fc6c",
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjcm0ueWloZS5jb20iLCJjb3JwIjoiZmIyZTIwYzUtYzUxZC00ZGJlLWJjMDAtNGE4ODM2ZTEzMzQ2IiwiZXhwIjoxNDk2MTQzMzU0MDQ3fQ.lL0Q-5ae_06-2hJra_iUBuyoCWFwiCayq2ds0Z--KGw",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "47.92.107.107:3002/customer/add",
+			"request": {
+				"url": "47.92.107.107:3002/customer/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjcm0ueWloZS5jb20iLCJjb3JwIjoiYTI3OTdjYzAtYjNiNC00NDc4LTk2MWQtOTJmYmI0YzMzNTg3IiwiZXhwIjoxNDk2Mjc4NTY4MjIyfQ.gS4aqMNLSxuMGD7B1BMfTl3npXIGmftCF1AuKpF_bMw",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"name\":\"某某公司\",\r\n        \"boss\":\"李总\",\r\n        \"phone\":\"15811112227\"\r\n    \r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "47.92.107.107:3002/customer/list",
+			"request": {
+				"url": {
+					"raw": "47.92.107.107:3002/customer/list?offset=0&limit=10",
+					"auth": {},
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customer",
+						"list"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjcm0ueWloZS5jb20iLCJzdWIiOiI0N2MzNmUzMS1hZDg3LTQ2ZWYtOTMwMS03NDViZjcxZmZiNWIiLCJjb3JwIjoiYjM5MjA5NmQtMTBjZS00Yzg5LWIwMGMtMWQwOTJhMWFhMzM1IiwiZXhwIjoxNDk2Mjc5NDY4MDA5fQ.VYdCyPt5h7D-OHXTolPK_iIeTiVf3JJtkJPhVT-YoOE",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "47.92.107.107:3002/customer/del",
+			"request": {
+				"url": "47.92.107.107:3002/customer/del/04128d3b-11c0-4b6b-b9a5-3dccd4c9fc6c",
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjcm0ueWloZS5jb20iLCJjb3JwIjoiZmIyZTIwYzUtYzUxZC00ZGJlLWJjMDAtNGE4ODM2ZTEzMzQ2IiwiZXhwIjoxNDk2MTQzMzU0MDQ3fQ.lL0Q-5ae_06-2hJra_iUBuyoCWFwiCayq2ds0Z--KGw",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

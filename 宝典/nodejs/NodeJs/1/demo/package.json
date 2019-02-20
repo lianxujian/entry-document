@@ -1,0 +1,15 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "main": "t.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lianxujian",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "index.js"
+  },
+  "description": ""
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+	<link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<header class="head">
+			<div class="h-left"></div>
+			<p>首页</p>
+			<div><i class="fa fa-bell"></i></div>
+		</header>
+		<section class="content">
+			<div>
+				<div class="swiper-container banner">
+					<div class="swiper-wrapper">
+			            <div class="swiper-slide"><img src="img/1.jpg" alt=""></div>
+			            <div class="swiper-slide"><img src="img/2.jpg" alt=""></div>
+			            <div class="swiper-slide"><img src="img/3.jpg" alt=""></div>
+			            <div class="swiper-slide"><img src="img/4.jpg" alt=""></div>
+			            <div class="swiper-slide"><img src="img/5.jpg" alt=""></div>
+			        </div>
+			        <!-- Add Pagination -->
+			        <div class="swiper-pagination"></div>
+				</div>
+				<nav class="nav">
+					<dl>
+						<dt><img src="img/进度查询.png" alt=""></dt>
+						<dd>进度查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="img/速贷排行.png" alt=""></dt>
+						<dd>速贷排行</dd>
+					</dl>
+					<dl>
+						<dt><img src="img/还款提醒.png" alt=""></dt>
+						<dd>还款提醒</dd>
+					</dl>
+				</nav>
+				<div class="con-top">
+					<div class="cont-head">
+						<h3>借现金</h3>
+						<a href="#">更多></a>
+					</div>
+					<div class="cont-content banner2">
+						<div class="swiper-wrapper">
+				            <div class="swiper-slide"><img src="img/6.png" alt=""></div>
+				            <div class="swiper-slide"><img src="img/7.png" alt=""></div>
+				            <div class="swiper-slide"><img src="img/6.png" alt=""></div>
+				        </div>
+					</div>
+				</div>
+				<div class="con-top">
+					<div class="cont-head">
+						<h3>还信用卡</h3>
+						<a href="#">更多></a>
+					</div>
+					<div class="cont-content banner2">
+						<div class="swiper-wrapper">
+				            <div class="swiper-slide"><img src="img/6.png" alt=""></div>
+				            <div class="swiper-slide"><img src="img/7.png" alt=""></div>
+				            <div class="swiper-slide"><img src="img/6.png" alt=""></div>
+				        </div>
+					</div>
+				</div>
+				<nav class="nav">
+					<dl>
+						<dt><img src="img/工薪贷.png" alt=""></dt>
+						<dd>进度查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="img/学生贷.png" alt=""></dt>
+						<dd>速贷排行</dd>
+					</dl>
+					<dl>
+						<dt><img src="img/企业主贷.png" alt=""></dt>
+						<dd>还款提醒</dd>
+					</dl>
+				</nav>
+				<div class="con-bottom">
+					<div class="conb-head">
+						<h3>资讯</h3>
+						<a href="#">更多></a>
+					</div>
+					<div class="conb-content">
+						<dl>
+							<dt><img src="img/进度查询.png" alt=""></dt>
+							<dd>
+								<h3>我是无耻的标题标题标题标题标题标题标题</h3>
+								<p>我是像白莲花一样的内容摘要,白莲花内容摘要,白莲花内容摘要</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="conb-foot">
+						<span><i class="fa fa-bell"></i>1224</span>
+						<span><i class="fa fa-bell"></i>收藏</span>
+						<span>30分钟前</span>
+					</div> 
+					<div class="conb-content">
+						<dl>
+							<dt><img src="img/进度查询.png" alt=""></dt>
+							<dd>
+								<h3>我是无耻的标题标题标题标题标题标题标题</h3>
+								<p>我是像白莲花一样的内容摘要,白莲花内容摘要,白莲花内容摘要</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="conb-foot">
+						<span><i class="fa fa-bell"></i>1224</span>
+						<span><i class="fa fa-bell"></i>收藏</span>
+						<span>30分钟前</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="foot">
+			<dl class="on">
+				<dt><img src="img/首页1.png" alt=""></dt>
+				<dd>首页</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/产品2.png" alt=""></dt>
+				<dd>产品</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/精准匹配2.png" alt=""></dt>
+				<dd>精准匹配</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/我2.png" alt=""></dt>
+				<dd>我的</dd>
+			</dl>
+		</footer>
+	</div>
+	<!-- Swiper JS -->
+    <script src="lib/swiper/js/swiper.min.js"></script>
+    <script src="lib/iscroll/iscroll.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+	    var swiper = new Swiper('.banner', {
+	        pagination: '.swiper-pagination',     
+	        autoplayDisableOnInteraction: false,  //滑动之后继续自动播
+	        paginationClickable: true, 
+	        autoplay:2000,    
+	        loop:true  
+	    });
+    	var swiper1 = new Swiper('.banner2', {
+	        slidesPerView: 3,
+	        spaceBetween: 20,
+	        loop:true  
+	    });
+	    var myScroll=new IScroll(".content",{
+	    	scrollbars:true
+	    	//bounce:false   //禁止拖
+	    })
+    </script>
+</body>
+</html>

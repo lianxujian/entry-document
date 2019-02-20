@@ -1,0 +1,104 @@
+.personal .personal-header {
+  position: relative;
+  height: 80px;
+  line-height: 80px;
+  font-size: 12px;
+}
+.personal .personal-header .h-left {
+  width: 45px;
+  height: 45px;
+  border-radius: 22.5px;
+  background: yellow;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.personal .personal-header p {
+  -webkit-flex: 5;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+.personal .personal-header span {
+  margin-right: 20px;
+  margin-top: 10px;
+}
+.personal .personal-header img {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+}
+.personal .content {
+  background: #FAFAFA;
+}
+.personal .content .person-page {
+  margin: 15px 0;
+  background: #fff;
+  width: 100%;
+}
+.personal .content .person-page .pp-top {
+  height: 50px;
+  line-height: 50px;
+}
+.personal .content .person-page .pp-top span:first-child {
+  float: left;
+  margin-left: 15px;
+}
+.personal .content .person-page .pp-top span:last-child {
+  float: right;
+  margin-right: 15px;
+}
+.personal .content .person-page .pp-bottom {
+  height: 60px;
+  display: -webkit-flex;
+}
+.personal .content .person-page .pp-bottom p {
+  position: relative;
+  line-height: 60px;
+  text-align: center;
+  -webkit-flex: 1;
+}
+.personal .content .person-page .pp-bottom p:first-child {
+  background: url(../img/personal_r3_c2.jpg) no-repeat 15% center;
+  background-size: 21px 21px;
+}
+.personal .content .person-page .pp-bottom p:nth-child(2) {
+  background: url(../img/personal_r3_c5.jpg) no-repeat 15% center;
+  background-size: 21px 21px;
+}
+.personal .content .person-page .pp-bottom p:last-child {
+  background: url(../img/personal_r3_c7.jpg) no-repeat 15% center;
+  background-size: 21px 21px;
+}
+.personal .content .person-page .pp-bottom p span {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: #FF505B;
+  text-align: center;
+  line-height: 16px;
+  color: #fff;
+  left: 58%;
+  top: 15%;
+}
+.personal .content .person-content {
+  height: 60px;
+  line-height: 60px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+.personal .content .person-content span:first-child {
+  float: left;
+  margin-left: 15px;
+}
+.personal .content .person-content span:first-child img {
+  width: 15px;
+  height: 19px;
+  margin-right: 12px;
+  margin-bottom: -5px;
+}
+.personal .content .person-content span:last-child {
+  float: right;
+  margin-right: 15px;
+}

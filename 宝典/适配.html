@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		@media all and (min-width:320px){
+			html{
+				font-size:77.3px;
+			}
+		}
+		@media all and (min-width:375px){
+			html{
+				font-size:90.6px;
+			}
+		}
+		@media all and (min-width:414px){
+			html{
+				font-size:100px;
+			}
+		}
+		.wrap{
+			width:100%;
+			height:auto;
+		}
+		.content{	
+			width:1024px;
+			height:auto;
+			margin:0 auto;
+		}
+		.box1,.box2,.box3{
+			width:33.33333%;
+			height:2rem;
+			float:left;
+		}
+		@media all and (max-width: 1024px){
+			.content{
+				width:980px;
+			}
+		}
+		@media all and (min-width:768px) and (max-width:800px){
+			.content{
+				width:100%;
+			}
+			.box1,.box2{
+				width:50%;
+			}
+			.box3{
+				width:100%;
+			}
+		}
+		@media all and (max-width:767px){
+			.content{
+				width:100%;
+			}
+			.box1,.box2,.box3{
+				width:100%;
+				margin-top:10px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="content">
+			<div class="box1" style="background:#f00;"></div>
+			<div class="box2" style="background:#0f0;"></div>
+			<div class="box3" style="background:#00f;"></div>
+		</div>
+	</div>
+</body>
+</html>

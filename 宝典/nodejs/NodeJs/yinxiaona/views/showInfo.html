@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            width:600px;
+            height:auto;
+
+        }
+        ul li{
+            list-style:none;
+            line-height:30px;
+            margin-top:10px;
+            background:#ccc;
+            display: flex;
+            justify-content: space-around;
+            border-radius:10px;
+        }
+        ul li b{
+            line-height: 30px;
+            display:inline-block;
+        }
+        button,.operate{
+            float:right;
+            width:80px;
+            line-height: 30px;
+            background:skyblue;
+            border:none;
+            text-align: center;
+        }
+        .operate{
+            background:none;
+        }
+    </style>
+</head>
+<body>
+       <ul id="list">
+           <li><b>Id</b><b>用户名</b><b>密码</b><b class="operate">操作</b></li>
+           <%for(var i=0;i<=info.length-1;i++){%>
+           <li>
+                <%for (var j in info[i]){%>
+            <span><%=info[i][j]%></span>
+           <%}%>
+               <button class="btn">删除</button>
+           </li>
+           <%}%>
+       </ul>
+       <script type="text/javascript" src="javascripts/jquery-2.1.1.js"></script>
+       <script>
+           $(function(){
+               $(".btn").on("click",function(){
+                   var id=$(this).parent().find("span:first").text();
+                   $.ajax({
+                       url:'http://localhost:9090/delete',
+                       data:{
+                            id:id
+                       },
+                       success:function(data){
+                          if(data=='ok'){
+                              $(this).parent().remove();
+                              location.href="http://localhost:9090/showInfo";
+                          }
+                       }
+                   })
+               })
+           })
+       </script>
+</body>
+</html>

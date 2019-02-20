@@ -1,0 +1,23 @@
+/**
+ * Created by Administrator on 2017/2/21.
+ */
+angular.module('mapp')
+    .config(function($stateProvider,$urlRouterProvider){
+        $urlRouterProvider.otherwise('home');
+        $stateProvider
+            .state('home',{
+                url:'/home',
+                templateUrl:'pages/home.html',
+                controller:'homeCtrl'
+            })
+            .state('list',{
+                url:'/list?id&name',
+                templateUrl:'pages/list.html',
+                controller:'listCtrl'
+            })
+            .state('detail',{
+                url:'/detail',
+                templateUrl:'pages/detail.html',
+                controller:'detailCtrl'
+            })
+    })

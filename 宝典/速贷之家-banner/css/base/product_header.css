@@ -1,0 +1,26 @@
+.product-head {
+  width: 100%;
+  height: 65px;
+  line-height: 65px;
+  background: #1A2E47;
+}
+.product-head div {
+  width: 60%;
+  height: 40px;
+  margin-top: 12px;
+  margin-left: 20%;
+  border-radius: 20px;
+  background: #3B4D65;
+  overflow: hidden;
+  display: -webkit-flex;
+}
+.product-head div p {
+  font-size: 12px;
+  -webkit-flex: 1;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+}
+.product-head div p.bg {
+  background: #01CA7E;
+}

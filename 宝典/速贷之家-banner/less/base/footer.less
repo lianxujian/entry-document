@@ -1,0 +1,33 @@
+.container{
+	.foot{
+		width:100%;
+		height:60px;
+		border-top:1px solid #ccc;
+		display:-webkit-flex;
+		dl{
+			margin:5px auto;
+			text-align:center;
+			dt{
+				width:30px;
+				height:30px;
+				img{
+					width:100%;
+				}
+			}
+			dd{
+				color:#808080;
+				font-size:10px;
+			}
+			&.on{
+				dd{
+					color:#1e2e45;
+				}
+			}
+			&:nth-child(3){
+				dt{
+					margin-left:8px;
+				}
+			}
+		}
+	}
+}
