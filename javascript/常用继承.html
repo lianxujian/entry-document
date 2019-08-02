@@ -21,7 +21,7 @@
 		//	Student.prototype=Object.create(Person.prototype)
 		//}else{
 			function F(){};
-			F.prototype=Student.prototype;
+			F.prototype=Person.prototype;
 			Student.prototype=new F();
 		//}
 		Student.prototype.constructor=Student;
